@@ -85,18 +85,14 @@ const Category = () => {
                 <ul className="flex items-center">
                     {categoryData?.map((item, index) => (
                         <li key={index}>
-                            <Link
-                                className="group relative flex space-x-2 items-center px-4 py-2 cursor-pointer hover:text-black border-r border-gray-300 "
-                                href={`/category/${item?.slug}`}
-                            >
-                                <p className="uppercase text-sm font-medium" >{item?.name}</p>
-                                {item?.children?.length > 0 ? (
+                            {item?.children?.length > 0 ? (
+                                // Category with children - use div instead of Link to avoid nesting
+                                <div className="group relative flex space-x-2 items-center px-4 py-2 cursor-pointer hover:text-black border-r border-gray-300">
+                                    <p className="uppercase text-sm font-medium">{item?.name}</p>
                                     <div>
                                         <SlArrowDown size={12} />
                                     </div>
-                                ) : null}
 
-                                {item?.children?.length > 0 ? (
                                     <div className="absolute z-10 w-[200px] top-full left-0 hidden group-hover:block bg-gray-50 py-2">
                                         <div className="p-2 flex">
                                             <ul className="w-full">
@@ -116,8 +112,16 @@ const Category = () => {
                                             </ul>
                                         </div>
                                     </div>
-                                ) : null}
-                            </Link>
+                                </div>
+                            ) : (
+                                // Category without children - use Link normally
+                                <Link
+                                    className="group relative flex space-x-2 items-center px-4 py-2 cursor-pointer hover:text-black border-r border-gray-300"
+                                    href={`/category/${item?.slug}`}
+                                >
+                                    <p className="uppercase text-sm font-medium">{item?.name}</p>
+                                </Link>
+                            )}
                         </li>
                     ))}
 

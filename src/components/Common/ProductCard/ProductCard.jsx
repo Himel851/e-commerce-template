@@ -11,7 +11,7 @@ const ProductCard = ({ productDetails }) => {
     <div className="group relative border border-black rounded-t cursor-pointer">
       {/* Image Section */}
       <div className="relative overflow-hidden group">
-        <div>
+        <Link href={`/product/${productDetails?.slug}`}>
           {/* Primary Image */}
           <Image
             width={500}
@@ -44,7 +44,7 @@ const ProductCard = ({ productDetails }) => {
               </span>
             </div>
           )}
-        </div>
+        </Link>
       </div>
 
       {/* Discount Badge */}
