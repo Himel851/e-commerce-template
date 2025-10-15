@@ -19,7 +19,7 @@ const Navbar = () => {
                 <div className="navbar bg-white text-black p-3 items-center">
                     <div className="navbar-start">
                         <div className='flex md:hidden mr-3'>
-                        <RxHamburgerMenu size={20} strokeWidth={0.5} />
+                            <RxHamburgerMenu size={20} strokeWidth={0.5} />
                         </div>
 
                         <Link href="/">
@@ -58,14 +58,14 @@ const Navbar = () => {
                     <div className="navbar-end">
                         <div className='flex items-center gap-6'>
                             <FaUserCircle className="text-black" size={30} />
-                            <div
+                            <Link href='/checkout'
                                 className="cursor-pointer relative"
                             >
                                 <div className="absolute top-[-13px] right-[-8px] bg-black h-[20px] w-[20px] rounded-full flex justify-center items-center">
                                     <p className="text-white text-xs">2</p>
                                 </div>
                                 <BsCart3 className="text-black" size={22} />
-                            </div>
+                            </Link>
                         </div>
 
                     </div>

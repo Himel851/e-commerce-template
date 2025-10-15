@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const TopCategories = () => {
@@ -6,30 +7,34 @@ const TopCategories = () => {
         {
             id: 1,
             name: "Demo",
+            slug: "demo",
             image: "/images/category1.jpg"
         },
         {
             id: 2,
             name: "Demo2",
+            slug: "demo",
             image: "/images/category2.jpg"
         },
         {
             id: 3,
             name: "Demo3",
+            slug: "demo",
             image: "/images/category3.jpg"
         }
     ]
     return (
         <div className='container'>
-            <div class="flex items-center justify-center w-full my-2 md:my-6 lg:my-6 xl:my-6">
-                <div class="h-px bg-gray-300 flex-grow"></div>
-                <span class="mx-4 uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">TOP CATEGORIES</span>
-                <div class="h-px bg-gray-300 flex-grow"></div>
+            <div className="flex items-center justify-center w-full my-2 md:my-6 lg:my-6 xl:my-6">
+                <div className="h-px bg-gray-300 flex-grow"></div>
+                <span className="mx-4 uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">TOP CATEGORIES</span>
+                <div className="h-px bg-gray-300 flex-grow"></div>
             </div>
 
             <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 ">
                 {categoryData?.map((item, index) => (
-                    <div
+                    <Link
+                        href={`/category/${item?.slug}`}
                         className="relative"
                         key={index}
                     >
@@ -58,7 +63,7 @@ const TopCategories = () => {
                             </div>
                         )}
 
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>
