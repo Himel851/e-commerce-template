@@ -1,6 +1,7 @@
-import BreadCrumbs from '@/components/Common/breadcrumb/BreadCrumbs';
-import ProductCard from '@/components/Common/ProductCard/ProductCard';
 import React from 'react'
+
+
+import ProductCard from '@/components/Common/ProductCard/ProductCard';
 
 const CategoryProduct = async ({ params }) => {
 
