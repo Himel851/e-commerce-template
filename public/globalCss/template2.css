@@ -1,0 +1,91 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #E6E6E6;
+}
+
+/* Custom Container Class - Works with all Tailwind versions */
+.container {
+  max-width: 1520px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.section-gap {
+  padding-top: 1.5rem; /* Tailwind pt-6 */
+}
+
+.text-title {
+  text-transform: uppercase; /* uppercase */
+  font-weight: 600;           /* font-bold */
+  font-size: 1.125rem;        /* text-lg */
+  color: #070707;             /* text-[#070707] */
+}
+
+.bg-primary{
+  background-color: #0E0F51;
+  color: white;
+}
+.text-primary{
+  color: #0E0F51;
+}
+
+.image-zoom,
+.image-zoom2 {
+  overflow: hidden;
+  display: block;
+}
+
+.image-zoom img {
+  transition: transform 3s ease; /* Smooth animation over 0.3 seconds */
+}
+
+.image-zoom:hover img {
+  transform: scale(1.2); /* Zoom in slig6tly on hover */
+}
+
+.image-zoom2 img {
+  transition: transform 0.5s ease; /* Smooth animation over 0.3 seconds */
+}
+
+.image-zoom2:hover img {
+  transform: scale(1.2); /* Zoom in slightly on hover */
+}
+
+/* Responsive padding */
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1280px) { /* xl breakpoint */
+  .section-gap {
+    padding-top: 2.5rem; /* Tailwind xl:pt-10 */
+  }
+}
+
+@media (min-width: 1536px) { /* 2xl breakpoint */
+  .section-gap {
+    padding-top: 60px; /* Tailwind 2xl:pt-[60px] */
+  }
+  .text-title {
+    font-size: 1.5rem;       /* 2xl:text-2xl */
+  }
+}

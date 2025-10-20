@@ -7,7 +7,7 @@ export default function Home() {
     <div>
       <HeroSection />
       <TopCategories />
-      <CategoryProducts />  
+      <CategoryProducts />
     </div>
   );
 }

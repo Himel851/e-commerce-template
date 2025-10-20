@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "lint": "eslint . --ext .js,.jsx",
+    "lint:fix": "eslint . --ext .js,.jsx --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -24,11 +24,8 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.14",
-    "@types/node": "24.7.2",
-    "@types/react": "19.2.2",
     "eslint": "^9.37.0",
     "prettier": "^3.6.2",
-    "tailwindcss": "^4.1.14",
-    "typescript": "5.9.3"
+    "tailwindcss": "^4.1.14"
   }
 }

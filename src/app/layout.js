@@ -4,6 +4,7 @@ import StoreProvider from "@/store/StoreProvider";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import "react-tabs/style/react-tabs.css";
+import DynamicCSS from "./DynamicCSS";
 
 
 const poppins = Poppins({
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
         className={poppins.className}
       >
         <StoreProvider>
+          <DynamicCSS />
           <Header />
           {children}
           <Footer />
