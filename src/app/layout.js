@@ -1,12 +1,13 @@
 import "./globals.css";
 import { Poppins } from "next/font/google";
+import StoreProvider from "@/store/StoreProvider";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import "react-tabs/style/react-tabs.css";
 
 
 const poppins = Poppins({
-  weight: ["100","200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-poppins",
@@ -20,12 +21,20 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light">
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+        />
+      </head>
       <body
         className={poppins.className}
       >
-        <Header />
-        {children}
-        <Footer />  
+        <StoreProvider>
+          <Header />
+          {children}
+          <Footer />
+        </StoreProvider>
       </body>
     </html>
   );

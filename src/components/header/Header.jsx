@@ -1,17 +1,13 @@
+"use client";
+
 import React from 'react'
-
-import Navbar from './Navbar';
-import Category from './Category';
-
+import { useAppSelector } from '@/store/store';
+import { getHeaderByTemplate } from './HeaderTemplate';
 
 const Header = () => {
-    return (
-        <div>
-            <Navbar />  
-            <Category />    
-        </div>
-
-    )
+    const activeTemplate = useAppSelector((s) => s.template.activeTemplate);
+    const ResolvedHeader = getHeaderByTemplate(activeTemplate);
+    return <ResolvedHeader />;
 }
 
 export default Header
