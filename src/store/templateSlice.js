@@ -3,7 +3,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    activeTemplate: "template2",
+    activeTemplate: "template1",
 };
 
 const templateSlice = createSlice({

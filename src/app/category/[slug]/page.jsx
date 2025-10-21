@@ -1,9 +1,18 @@
+// @ts-nocheck
+"use client"
+
 import React from 'react'
 
-import BreadCrumbs from '@/components/Common/breadcrumb/BreadCrumbs'
-import ProductCard from '@/components/Common/ProductCard/ProductCard';
+import BreadCrumbs from '@/components/Common/template1/breadcrumb/BreadCrumbs'
+import ProductCard from '@/components/Common/template1/ProductCard/ProductCard';
+import { useAppSelector } from '@/store/store';
+import CategoryProduct1 from '@/components/categoryProduct/template1/CategoryProduct1';
+import CategoryProduct2 from '@/components/categoryProduct/template2/CategoryProduct2';
 
 const CategoryProduct = async ({ params }) => {
+
+    const activeTemplate = useAppSelector((state) => state.template.activeTemplate);
+
 
     const allProducts = [
         {
@@ -159,31 +168,18 @@ const CategoryProduct = async ({ params }) => {
         { name: `${slug}`, url: `/category/${slug}` },
     ];
 
+    if (activeTemplate === "template1") {
+        return (
+            <div>
+                <CategoryProduct1 breadCumbs={breadCumbs} allProducts={allProducts} />
+            </div>
+        );
+    }
+
+    // template2 components
     return (
         <div>
-            <div className='bg-[#E5E7EB]'>
-                <div className="container">
-                    <div className=" hidden lg:block">
-                        <div className=" breadcrumbs text-sm !py-3">
-                            <BreadCrumbs breadCumbs={breadCumbs} />
-                        </div>
-                    </div>
-
-                    {/* <div className="max-w-7xl sm:max-w-[45rem]  xls:max-w-[25rem] xms:max-w-[21rem] xs:max-w-[18rem] mx-auto">
-          <ProductSectionSlug params={params} />
-        </div> */}
-                </div>
-            </div>
-
-            <div className="my-4 container">
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5  gap-6 ">
-                    {allProducts?.map((item, index) => (
-                        <div key={index}>
-                            <ProductCard productDetails={item} />
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <CategoryProduct2 breadCumbs={breadCumbs} allProducts={allProducts} />
         </div>
     )
 }

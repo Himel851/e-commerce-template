@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import ProductCard from '@/components/Common/ProductCard/ProductCard'
+import ProductCard from '@/components/Common/template2/ProductCard/ProductCard'
 
 const CategoryProducts = () => {
     const categoryProducts = [
@@ -182,21 +182,18 @@ const CategoryProducts = () => {
     return (
         <div className='container'>
             {categoryProducts?.map((item, index) => (
-                <div key={index} className="py-4">
-                    <div className="flex items-center py-3">
-                        <p className="uppercase font-medium text-[22px] xls:text-lg xms:text-lg xs:text-lg">
+                <div key={index} className="py-4 bg-white">
+                    <div className="flex justify-between items-center bg-primary  shadow p-4">
+                        <p className="text-title !text-white ">
                             {item?.categoryName}
                         </p>
-                        <div className="flex-grow border-t border-gray-300 mx-4"></div>
-                        <Link
-                            href={`/category/${item?.slug}`}
-                            className="px-4 py-2 text-white text-sm bg-black rounded-full"
-                        >
-                            View All
+                        <Link href={`/category/${item?.slug}`} className="text-base text-white font-semibold border-b border-primary">
+                            See All
                         </Link>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-6 ">
+
+                    <div className="py-6 mx-[1px] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2">
                         {item?.products?.map((it, ind) => (
                             <div key={ind}>
                                 <ProductCard productDetails={it} />

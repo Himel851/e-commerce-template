@@ -1,5 +1,5 @@
+import ProductCard from '@/components/Common/template1/ProductCard/ProductCard'
 import React from 'react'
-import ProductCard from '../Common/ProductCard/ProductCard'
 
 const relatedProducts = [
     {

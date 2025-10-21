@@ -83,9 +83,9 @@ const TopNav = ({ menu, setShowSearchBar, showSearchBar }) => {
               </Link>
 
               {/* User Component (Shown on larger screens) */}
-              <p className="hidden md:block">
+              <div className="hidden md:block">
                 <BigscreenUserCompo />
-              </p>
+              </div>
             </div>
           </div>
         </div>
